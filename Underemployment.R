@@ -1,6 +1,9 @@
 #read in time-related underemployment data (from IMF, %)
 
+#new package
 install.packages("naniar")
+
+#library
 library(tidyverse)
 library(readxl)
 library(naniar)
@@ -32,9 +35,8 @@ underemployment_plot <- ue2 %>%
   geom_line() + 
   xlab("Year") +
   ylab("Percentage of underemployment") +
-  xlim(1988, 2020) +
-  ylim(0, 30) +
+  xlim(1987, 2020) +
+  ylim(0, 28) +
   ggtitle("Percentage underemployment") + 
   facet_wrap(~Country)
-
 underemployment_plot

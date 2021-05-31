@@ -598,4 +598,22 @@ standardisation(AUSm_tbl, "2000", "total")
 #remembering to change dfs to numeric
 #and to write the results into a new df (ASMR). Will need to start here with writing out of results. 
 #check https://stackoverflow.com/questions/51800824/save-function-output-to-vector-or-column-in-data-frame-r
-#and
+
+#Frank's advice - use map function
+
+library(dplyr)
+library(purrr)
+
+#need to check code below
+
+list_mortality_files <- read.table("D:/Mortality_trends/Austerity/Austerity_analysis/Data/HMD_mortality_country_list.xls",
+                                   sep = "", 
+                                   c("country", "country_code", "mortality_table_code"),
+                                   skip = 1) 
+
+list_mortality_files <- list.files(path = "D:/Mortality_trends/Austerity/Austerity_analysis/Data/Mx_5x1") 
+df <- list_mortality_files %>%
+  map_df(read_table(.x, sep = "", 
+                    col.names = c("year", "age", "female", "male", "total"),
+                    skip = 3 ))
+

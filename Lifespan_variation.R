@@ -102,7 +102,7 @@ LSVT_plot <- lsvT %>%
   ggplot(aes(Year, eddagger)) + geom_line() + 
   xlab("Year") +
   ylab("Lifespan variation (years)") +
-  xlim(1988, 2020) +
+  xlim(1987, 2020) +
   ylim(10, 20) +
   ggtitle("Lifespan variation for the total population") + 
   facet_wrap(~Country)
@@ -115,7 +115,7 @@ LSVF_plot <- lsvF %>%
   ggplot(aes(Year, eddagger)) + geom_line() + 
   xlab("Year") +
   ylab("Lifespan variation (years)") +
-  xlim(1988, 2020) +
+  xlim(1987, 2020) +
   ylim(10, 20) +
   ggtitle("Female lifespan variation") + 
   facet_wrap(~Country)
@@ -128,7 +128,7 @@ LSVM_plot <- lsvM %>%
   ggplot(aes(Year, eddagger)) + geom_line() + 
   xlab("Year") +
   ylab("Lifespan variation (years)") +
-  xlim(1988, 2020) +
+  xlim(1987, 2020) +
   ylim(10, 20) +
   ggtitle("Male lifespan variation") + 
   facet_wrap(~Country)

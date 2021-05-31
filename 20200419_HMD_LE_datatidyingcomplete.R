@@ -435,4 +435,15 @@ e0_combined <- dplyr::full_join(e047, USA_tbl, by = "year")
 
 e0_combined_ordered <- e0_combined %>% arrange(year)
 
+#plot the LE data
 
+e0_plot <- e0_combined_ordered %>% 
+  ggplot(aes(Year, asmrT2)) + geom_line() + 
+  xlab("Year") +
+  ylab("Year on year percentage change in age standardised mortality rate") +
+  xlim(1988, 2020) +
+  ylim(-12, 12) +
+  ggtitle("Year on year percentage change in mortality rate for the total population") + 
+  facet_wrap(~Country)
+
+asmr_changeT
